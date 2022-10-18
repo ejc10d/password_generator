@@ -25,6 +25,32 @@ if (isNaN(passwordLength) || passwordLength < 8 || passwordLength >128) {
  var lowerCaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
  var upperCaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
+ var passwordOptions = []
+
+if (wantNumbers === true) {
+  passwordOptions.push(numberList)
+}
+
+if (wantSymbols === true) {
+  passwordOptions.push(symbolList)
+}
+
+if (wantLower === true) {
+  passwordOptions.push(lowerCaseList)
+}
+
+if (wantUpper === true) {
+  passwordOptions.push(upperCaseList)
+}
+
+if (passwordOptions.length ===0) {
+  window.alert("Please select at least one character option for your password. Reload the page and start over.")
+  return
+ }
+
+var generatePassword = ""
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();

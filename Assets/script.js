@@ -15,7 +15,12 @@ if (isNaN(passwordLength) || passwordLength < 8 || passwordLength >128) {
   window.alert("Please enter a number between 8 and 128.")
   return
  }
+ var wantNumbers = window.confirm("Would you like your password to have numbers?")
+ var wantSymbols = window.confirm("Would you like your password to have symbols?")
+ var wantLower = window.confirm("Would you like your password to have lower-case letters?")
+ var wantUpper = window.confirm("Would you like your password to have upper-case letters?")
 
+ 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();

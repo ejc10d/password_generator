@@ -1,6 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function randomInt(min, max) {
+  if (!max) {
+    max = min
+    min = 0
+  }
+  var rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
+  }
+
 function randomChoice(list) {
   return list[randomInt(list.length)]
 }
@@ -50,6 +59,14 @@ if (passwordOptions.length ===0) {
 
 var generatePassword = ""
 
+for (var i=0; i < passwordLength; i++) {
+  var randomList = randomChoice(passwordOptions)
+  var randomChar = randomChoice(randomList)
+  generatePassword += randomChar
+}
+
+return generatePassword
+}
 
 // Write password to the #password input
 function writePassword() {

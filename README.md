@@ -1,4 +1,4 @@
-# Challege_3
+# Another Password Generator
 
 ## Description
 
